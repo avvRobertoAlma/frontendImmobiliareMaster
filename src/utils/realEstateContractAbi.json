@@ -1,0 +1,382 @@
+[
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "balances",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x27e235e3"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "oracle",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x7dc0d1d0"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "realEstates",
+    "outputs": [
+      {
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "name": "metaData",
+        "type": "bytes32"
+      },
+      {
+        "name": "rentedBy",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x99395945"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "agreements",
+    "outputs": [
+      {
+        "name": "accepted",
+        "type": "bool"
+      },
+      {
+        "name": "renter",
+        "type": "address"
+      },
+      {
+        "name": "rentedRealEstate",
+        "type": "uint256"
+      },
+      {
+        "name": "monthlyRentalPrice",
+        "type": "uint256"
+      },
+      {
+        "name": "startsOn",
+        "type": "uint256"
+      },
+      {
+        "name": "endsOn",
+        "type": "uint256"
+      },
+      {
+        "name": "deposit",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0xbd14de96"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "customersStorageAddress",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0xc86abcb4"
+  },
+  {
+    "inputs": [
+      {
+        "name": "_customersStorageAddress",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor",
+    "signature": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "RealEstateRegistration",
+    "type": "event",
+    "signature": "0xd371977a375240574bedd3d94d99107b3c7ccd0045dcac2ecf1fcc5af33c26ca"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "RealEstateOwnerChange",
+    "type": "event",
+    "signature": "0xd8168d710a4f332a14f45810c1da8d2484a7277cab42624da1b9b502115649e8"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "realEstateId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "by",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "agreementId",
+        "type": "uint256"
+      }
+    ],
+    "name": "RentAgreementProposalSent",
+    "type": "event",
+    "signature": "0xdc76820776e186bf6181bba1831531b2a16ece98fe8ea94ad4246834eaae9d2a"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "agreementId",
+        "type": "uint256"
+      }
+    ],
+    "name": "RentAgreementAccepted",
+    "type": "event",
+    "signature": "0x23217d743e05a8e910a481b5e56c1e24ecb6d0fc45d7687aa4489effa64bf91c"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_metaData",
+        "type": "bytes32"
+      },
+      {
+        "name": "_owner",
+        "type": "address"
+      }
+    ],
+    "name": "registerNewRealEstate",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x4ad12f50"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_realEstateId",
+        "type": "uint256"
+      },
+      {
+        "name": "_newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "changeRealEstateOwner",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x2039c03e"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_rentedRealEstate",
+        "type": "uint256"
+      },
+      {
+        "name": "_monthlyRentalPrice",
+        "type": "uint256"
+      },
+      {
+        "name": "_startsOn",
+        "type": "uint256"
+      },
+      {
+        "name": "_endsOn",
+        "type": "uint256"
+      },
+      {
+        "name": "_deposit",
+        "type": "uint256"
+      }
+    ],
+    "name": "setNewRentAgreement",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function",
+    "signature": "0xd94c5d64"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_agreementId",
+        "type": "uint256"
+      }
+    ],
+    "name": "cancelRentAgreement",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0xa8ee90aa"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_agreementId",
+        "type": "uint256"
+      }
+    ],
+    "name": "acceptRentAgreement",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x119bb3d8"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_realEstateId",
+        "type": "uint256"
+      }
+    ],
+    "name": "isRealEstateExisting",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x7df44393"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_byWho",
+        "type": "address"
+      }
+    ],
+    "name": "getOwnedRealEstates",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x174dfb8a"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getMyOffers",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x037852c7"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_realEstateId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getRealEstatesOffers",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0xb28a1d7b"
+  }
+]
